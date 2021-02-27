@@ -1,5 +1,5 @@
 import { Button, TextField } from '@material-ui/core';
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import {Cadastro} from './styles';
 import * as UserActions from '../../store/ducks/users/actions';
@@ -17,11 +17,7 @@ const SignUp = () => {
     }
 
     dispatch(UserActions.postUsersRegisterRequest(request))
-
-    console.log('input', request)
   }
-
-
   return(
     <>
       <Cadastro>

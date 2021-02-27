@@ -16,7 +16,7 @@ const userRegisterReducer: Reducer = (state=initialState,action) => {
     case UserTypes.POST_USERS_REGISTER_SUCCESS:
       return{
         ...state,
-        arrayUsers: action.payload,
+        arrayUsers: action.payload.data,
         loading: false
       }
     case UserTypes.POST_USERS_REGISTER_FAILURE:
@@ -24,6 +24,22 @@ const userRegisterReducer: Reducer = (state=initialState,action) => {
         ...state,
         loading: false
       }
+    case UserTypes.POST_USERS_LOGIN_REQUEST:
+      return{
+        ...state,
+        loading: true
+      }
+    case UserTypes.POST_USERS_LOGIN_SUCCESS:
+      return{
+        ...state,
+        arrayUsers: action.payload.data,
+        loading: false
+      }
+      case UserTypes.POST_USERS_LOGIN_FAILURE:
+        return{
+          ...state,
+          loading: false
+        }
     default:
       return state
   }

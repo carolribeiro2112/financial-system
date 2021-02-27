@@ -2,12 +2,19 @@ import React from 'react';
 
 import Sidebar from '../../components/Sidebar';  
 
+import {Dashboard} from './styles'
+
 const Home = () => {
   return(
-    <>
-      <Sidebar/>
-      <h1>Seja bem-vindo!</h1>
-    </>
+    <Dashboard>
+      <aside>
+        <Sidebar/>
+      </aside>
+      
+      <section>
+        <h1>Seja bem-vindo!</h1>
+      </section>  
+    </Dashboard>
   )
 }
 
