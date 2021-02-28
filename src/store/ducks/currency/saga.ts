@@ -4,10 +4,10 @@ import {getCurrencyFailure,getCurrencySuccess} from './actions';
 import CurrencyService from '../../../services/currency-service';
 import {AxiosResponse} from 'axios';
 
-export function* getCurrenciesSaga(action:any) {
+export function* getCurrenciesSaga() {
   try{
-    const response:AxiosResponse = yield call(CurrencyService.getCurrencies, action.payload)
-    yield put(getCurrencySuccess(response.data))
+    const response:AxiosResponse = yield call(CurrencyService.getCurrencies)
+    yield put(getCurrencySuccess(Object.values(response.data)))
   } catch(err) {
     yield(getCurrencyFailure)
   }

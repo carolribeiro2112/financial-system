@@ -3,7 +3,6 @@ import {CurrencyTypes} from './types';
 
 const initialState: any = {
   arrayCurrencies: [],
-  loading: false,
 }
 
 const currencyReducer: Reducer = (state=initialState,action) => {
@@ -11,18 +10,15 @@ const currencyReducer: Reducer = (state=initialState,action) => {
     case CurrencyTypes.GET_CURRENCY_REQUEST:
       return{
         ...state,
-        loading:true
+        arrayCurrencies:action.payload,
       }
     case CurrencyTypes.GET_CURRENCY_SUCCESS:
       return{
-        ...state,
-        arrayCurrencies:action.payload.data,
-        loading: false
+        arrayCurrencies:action.payload,
       }
     case CurrencyTypes.GET_CURRENCY_FAILURE:
       return{
         ...state,
-        loading: false
       }
     default:
       return state

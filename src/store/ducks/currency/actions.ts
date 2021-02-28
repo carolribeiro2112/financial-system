@@ -1,6 +1,6 @@
 import {action} from 'typesafe-actions';
-import {CurrencyTypes, Currencies} from './types';
+import {CurrencyTypes} from './types';
 
-export const getCurrencyRequest = (currency:any) => action(CurrencyTypes.GET_CURRENCY_REQUEST,currency)
-export const getCurrencySuccess = (currencies: Currencies[]) => action(CurrencyTypes.GET_CURRENCY_SUCCESS, currencies)
+export const getCurrencyRequest = () => action(CurrencyTypes.GET_CURRENCY_REQUEST)
+export const getCurrencySuccess = (payload: any) => action(CurrencyTypes.GET_CURRENCY_SUCCESS, payload)
 export const getCurrencyFailure = () => action(CurrencyTypes.GET_CURRENCY_FAILURE)

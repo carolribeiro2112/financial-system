@@ -1,12 +1,22 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Sidebar from '../../components/Sidebar';  
-// import { Currencies } from '../../store/ducks/currency/types';
+import { getCurrencyRequest } from '../../store/ducks/currency/actions';
+import { Currencies } from '../../store/ducks/currency/types';
 import { Dashboard } from '../Currency/styles';
 
 const Currency = () => {
-  const arrayCurrencies = useSelector((state:any)=>state.currencies)
+  const arrayCurrencies = useSelector((state:any)=>state.currencyReducer)
+
+  const dispatch = useDispatch();
+
+  useEffect(()=>{
+    dispatch(getCurrencyRequest())
+  },[dispatch])
+
+  console.log('componente', arrayCurrencies)
+
   return(
     <Dashboard>
       <aside>
@@ -15,7 +25,7 @@ const Currency = () => {
       <section>
         <h2>selecione a moeda desejada</h2>
         {
-          arrayCurrencies.map((item:any)=>(
+          arrayCurrencies?.map((item:Currencies)=>(
             <div key={item.currency_code}>
               <h3>{item.currency_code}</h3>
               <p>{item.name}</p>
