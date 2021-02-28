@@ -2,7 +2,7 @@ import {Reducer} from 'redux';
 import {CurrencyTypes} from './types';
 
 const initialState: any = {
-  arrayCurrencies: {},
+  arrayCurrencies: [],
   loading: false,
 }
 

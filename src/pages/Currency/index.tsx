@@ -7,8 +7,6 @@ import { Dashboard } from '../Currency/styles';
 
 const Currency = () => {
   const arrayCurrencies = useSelector((state:any)=>state.currencies)
-
-
   return(
     <Dashboard>
       <aside>
