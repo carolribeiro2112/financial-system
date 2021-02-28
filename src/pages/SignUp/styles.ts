@@ -12,4 +12,8 @@ export const Cadastro = styled.div`
   .input{
     margin-bottom: 10px;
   }
+  
+  .a{
+    margin-top: 50px;
+  }
 `;

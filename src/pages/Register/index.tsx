@@ -1,13 +1,20 @@
 import React from 'react';
 import Sidebar from '../../components/Sidebar';
+import { Dashboard } from './styles';
 
 const Register = () => {
   return(
-    <>
-      <Sidebar/>
-      <h1>Registro de despesas</h1>
-    </>
+    <Dashboard>
+      <aside>
+        <Sidebar/>
+      </aside>
+      
+      <section>
+        <h1>Registro de despesas</h1>
+      </section>  
+    </Dashboard>
   )
 }
 
 export default Register;
+

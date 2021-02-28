@@ -3,6 +3,9 @@ import React, { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import {Cadastro} from './styles';
 import * as UserActions from '../../store/ducks/users/actions';
+import {Toaster} from 'react-hot-toast';
+import { Link } from 'react-router-dom';
+
 
 const SignUp = () => {
   const dispatch = useDispatch();
@@ -35,7 +38,12 @@ const SignUp = () => {
           Cadastrar
         </Button>
 
+        <div className="a">
+          <Link to='/'>Fazer Login</Link> 
+        </div>
+        
       </Cadastro>
+      <Toaster/>
     </>
   )
 }
