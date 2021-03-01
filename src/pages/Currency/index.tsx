@@ -7,7 +7,7 @@ import { Currencies } from '../../store/ducks/currency/types';
 import { Dashboard } from '../Currency/styles';
 
 const Currency = () => {
-  const arrayCurrencies = useSelector((state:any)=>state.currencyReducer)
+  const arrayCurrency = useSelector((state:any)=>state.currencyReducer.arrayCurrencies)
 
   const dispatch = useDispatch();
 
@@ -15,7 +15,7 @@ const Currency = () => {
     dispatch(getCurrencyRequest())
   },[dispatch])
 
-  console.log('componente', arrayCurrencies)
+  console.log('componente', arrayCurrency)
 
   return(
     <Dashboard>
@@ -25,7 +25,7 @@ const Currency = () => {
       <section>
         <h2>selecione a moeda desejada</h2>
         {
-          arrayCurrencies?.map((item:Currencies)=>(
+          arrayCurrency?.map((item:Currencies)=>(
             <div key={item.currency_code}>
               <h3>{item.currency_code}</h3>
               <p>{item.name}</p>

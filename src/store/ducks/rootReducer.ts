@@ -3,8 +3,8 @@ import currencyReducer from './currency/reducer';
 import userRegisterReducer from './users/reducer';
 
 const createRootReducer = () => combineReducers({
-  user: userRegisterReducer,
-  currencies: currencyReducer,
+  userRegisterReducer,
+  currencyReducer,
 })
 
 export default createRootReducer;

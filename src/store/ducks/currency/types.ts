@@ -4,7 +4,12 @@ export enum CurrencyTypes{
   GET_CURRENCY_FAILURE = '@currency/GET_CURRENCY_FAILURE',
 }
 
+export interface CurrencyState {
+  arrayCurrencies: Currencies[]
+}
+
 export interface Currencies{
   currency_code: string,
   name: string,
 }
+

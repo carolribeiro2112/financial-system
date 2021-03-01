@@ -6,5 +6,9 @@ export const Dashboard = styled.div`
 
   section{
     margin: 20px auto;
+
+    div{
+      margin-top: 20px;
+    }
   }
 `;
